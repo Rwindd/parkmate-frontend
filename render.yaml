@@ -1,0 +1,24 @@
+# render.yaml
+# Render reads this file to know how to run your Spring Boot backend.
+# Commit this file inside your backend/ folder.
+
+services:
+  - type: web
+    name: parkmate-backend
+    runtime: java
+    plan: free
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/parkmate-backend-*.jar
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: prod
+      - key: DB_URL
+        sync: false          # you fill this in Render dashboard
+      - key: DB_USER
+        sync: false          # you fill this in Render dashboard
+      - key: DB_PASS
+        sync: false          # you fill this in Render dashboard
+      - key: JWT_SECRET
+        sync: false          # you fill this in Render dashboard
+      - key: ALLOWED_ORIGIN
+        value: https://parkmate.netlify.app   # your Netlify URL

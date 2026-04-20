@@ -1,0 +1,14 @@
+# netlify.toml
+# Netlify reads this file to know how to build your React app.
+# You don't need to change anything here.
+
+[build]
+  base    = "frontend"          # folder where React lives
+  command = "npm run build"     # how to build
+  publish = "build"             # folder Netlify serves
+
+# This fixes the "page not found" bug when users refresh on any route
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200

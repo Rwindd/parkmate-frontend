@@ -1,0 +1,31 @@
+# ─── Node / React ───────────────────────
+node_modules/
+frontend/node_modules/
+frontend/build/
+frontend/.env.local
+frontend/.env.*.local
+npm-debug.log*
+yarn-error.log
+
+# ─── Java / Spring Boot ─────────────────
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+*.war
+
+# ─── IDE ────────────────────────────────
+.idea/
+.vscode/
+*.iml
+*.iws
+
+# ─── OS ─────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ─── Secrets — NEVER commit these ───────
+.env
+.env.production
+*.env
+application-prod.properties
