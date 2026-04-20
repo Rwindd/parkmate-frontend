@@ -3,7 +3,6 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getModuleEvents, getEventHistory } from '../api';
 import { EventCard } from '../components/shared.jsx';
-import '../components/EventCard.css';
 
 const FILTERS = {
   sports: [['all','⚡','All'],['Cricket','🏏','Cricket'],['Badminton','🏸','Badminton'],['Chess','♟','Chess'],['Running','🏃','Running'],['Football','⚽','Football'],['TT','🏓','TT'],['Carrom','🎯','Carrom']],

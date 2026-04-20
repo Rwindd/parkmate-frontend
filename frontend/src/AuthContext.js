@@ -3,7 +3,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { registerOrLogin } from './api';
-import { v4 as uuid } from 'uuid';
+// no uuid package needed — use browser built-in
 
 const Ctx = createContext(null);
 export const useAuth = () => useContext(Ctx);
@@ -36,7 +36,7 @@ export function AuthProvider({ children }) {
   // Called from Onboarding page
   async function register(name, company, tower, floor, phone) {
     let deviceId = localStorage.getItem('pm_device');
-    if (!deviceId) { deviceId = uuid(); localStorage.setItem('pm_device', deviceId); }
+    if (!deviceId) { deviceId = crypto.randomUUID(); localStorage.setItem('pm_device', deviceId); }
     const res = await registerOrLogin({ deviceId, name, company, tower, floor, phone });
     localStorage.setItem('pm_token', res.token);
     setToken(res.token);

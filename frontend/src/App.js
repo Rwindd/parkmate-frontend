@@ -14,7 +14,6 @@ import { Profile }      from './pages/Profile';
 import './styles/global.css';
 import './pages/Home.css';
 import './pages/animations.css';
-import './components/EventCard.css';
 
 // Protects routes — if not logged in, go to /onboard
 function Guard({ children }) {

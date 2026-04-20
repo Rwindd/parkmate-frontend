@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { getHomeEvents, getPresence } from '../api';
 import { useAuth } from '../AuthContext';
 import { EventCard } from '../components/shared.jsx';
-import '../components/EventCard.css';
 
 const MODULES = [
   { to:'/sports',    bg:'#051A0E', border:'rgba(52,211,153,.2)',  ico:'🏏', name:'Sports',        cnt:'12 active events', live:true,  liveColor:'var(--jade)' },
